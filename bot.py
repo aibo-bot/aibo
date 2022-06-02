@@ -61,4 +61,9 @@ class BotBase(commands.Bot):
             
             await self.tree.sync(guild=guild)
             await self.tree.sync()
-            
+
+    async def close(self) -> None:
+        await self.session.close()
+        await self.pool.close()
+        
+        return await super().close()
