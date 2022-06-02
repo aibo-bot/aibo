@@ -41,6 +41,6 @@ class Gameboy(commands.GroupCog, description="Emulate a gameboy with classic ret
                 view=None
             )
 
-    
 async def setup(bot: BotBase):
     await bot.add_cog(Gameboy(bot))
+    

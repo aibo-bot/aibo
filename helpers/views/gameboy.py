@@ -18,8 +18,7 @@ from helpers.deco import to_thread
 from helpers.constants import (
     GAMEBOY_BUTTON_ICONS,
     GAMEBOY_BUTTON_STYLES,
-    GAMEBOY_BUTTON_BINDINGS,
-    INVIS_CHAR
+    GAMEBOY_BUTTON_BINDINGS
 )
 
 
