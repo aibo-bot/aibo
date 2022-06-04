@@ -9,6 +9,8 @@ class EMOJIS:
     green_check = "<:_:979855733086642240>"
     red_cross = "<:_:981247061632643132>"
     power_btn = "<:_:981623957826461806>"
+    warning = "<:_:982243360758718536>"
+    currency_coin = "<a:_:982248739974549504>"
 
 EMBED_BG = 0x2F3136
 INVIS_CHAR = "\u2800"

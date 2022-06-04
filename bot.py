@@ -9,6 +9,7 @@ from discord.ext import commands
 
 import config
 from helpers.tree import CustomTree
+from helpers.postgres import PostgresManager
 
 if TYPE_CHECKING:
     from asyncpg import Pool
@@ -26,6 +27,7 @@ class BotBase(commands.Bot):
         resync: bool
     ):
         self.pool: Pool = pool
+        self.postgres = PostgresManager(pool)
         self.session: ClientSession = session
         self.config = config
 
