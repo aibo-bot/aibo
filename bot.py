@@ -38,7 +38,11 @@ class BotBase(commands.Bot):
             command_prefix="games!",
             description="A cool games bot",
             intents=intents,
-            tree_cls=CustomTree
+            tree_cls=CustomTree,
+            activity=discord.Streaming(
+                name="pure fun!",
+                url="https://www.youtube.com/watch?v=P3xcTFPme6I"
+            )
         )
 
         self.__resync_commands = resync
