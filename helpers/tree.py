@@ -24,4 +24,5 @@ class CustomTree(app_commands.CommandTree):
         )
 
         meth = interaction.followup.send if interaction.response.is_done() else interaction.response.send_message
-        await meth(content=msg)
+        await meth(content=msg, ephemeral=True)
+        

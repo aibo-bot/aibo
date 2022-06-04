@@ -64,3 +64,75 @@ GAMEBOY_BUTTON_BINDINGS: dict[str, None | Tuple[int, int]] = {
     "select": (WindowEvent.PRESS_BUTTON_SELECT, WindowEvent.RELEASE_BUTTON_SELECT),
     "power": (WindowEvent.QUIT, WindowEvent.PASS)
 }
+ANILIST_ANIME_QUERY = """
+query($search: String, $page: Int = 1, $per_page: Int = 10) {
+    Page(page: $page, perPage: $per_page) {
+        pageInfo {
+            total
+            currentPage
+            lastPage
+        }
+        media(search: $search, type: ANIME, sort: POPULARITY_DESC) {
+            title {
+                romaji
+                english
+                native
+            },
+            description(asHtml: false)
+            siteUrl
+            bannerImage
+            coverImage {
+                large
+            },
+            startDate {
+                year
+                month
+                day
+            },
+            endDate {
+                year
+                month
+                day
+            },
+            episodes
+            isAdult
+        }
+    }
+}
+"""
+ANILIST_MANGA_QUERY = """
+query($search: String, $page: Int = 1, $per_page: Int = 10) {
+    Page(page: $page, perPage: $per_page) {
+        pageInfo {
+            total
+            currentPage
+            lastPage
+        }
+        media(search: $search, type: MANGA, sort: POPULARITY_DESC) {
+            title {
+                romaji
+                english
+                native
+            },
+            description(asHtml: false)
+            siteUrl
+            bannerImage
+            coverImage {
+                large
+            },
+            startDate {
+                year
+                month
+                day
+            },
+            endDate {
+                year
+                month
+                day
+            },
+            volumes
+            isAdult
+        }
+    }
+}
+"""
