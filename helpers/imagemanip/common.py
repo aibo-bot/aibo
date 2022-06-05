@@ -9,7 +9,7 @@ if TYPE_CHECKING:
     from discord import Member, User
 
 
-def add_corners(im, rad):
+def add_corners(im: Image.Image, rad: int) -> Image.Image:
     circle = Image.new('L', (rad * 2, rad * 2), 0)
     draw = ImageDraw.Draw(circle)
     draw.ellipse((0, 0, rad * 2, rad * 2), fill=255)
@@ -27,4 +27,3 @@ async def save_avatar(user: User | Member) -> BytesIO:
     await user.display_avatar.save(buffer, seek_begin=True)
 
     return buffer
-    
